@@ -1,37 +1,83 @@
 # Carpet YBS Extension
-这是一个基于Carpet模组的扩展，专注于村民相关的功能优化和增强，为玩家提供更好的游戏体验和更多的自定义选项。
+这是一个基于Carpet模组的扩展，包含了诸多主要供月饼服使用的有用或者无用的功能。
+[![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange
+)](https://github.com/YBS-Server/Carpet-YBS-Addition)
 
-## 功能特性
+## 使用方法
 
-### 总控开关
+### 指令列表
+本模组添加了子指令：
+```
+/ybs
+```
+用于调整一些相对来说会有巨大影响的规则和设置。
+
+### 查看设置
+可以使用自定义命令查看所有设置：
+
+```
+ybs settings
+```
+
+## 规则/特性
+
+### 总控开关（YbsMasterSwitch）
 - 添加了总控开关（ybsMasterSwitch），可以统一控制所有功能的启用和关闭
 - 默认关闭，开启后才能使用其他所有子功能
 - 当总控关闭时，所有子功能均无效
+- 通过/ybs 子指令控制开关
 
-### 村民优化功能
+### 村民相关
 
-#### 调整村民识别床的距离
+#### 调整村民识别床的距离（villagerBedSearchDistance）
 - 允许自定义设置村民寻找和识别床的最大距离
 - 默认值为48格，最大可调整至128格
 - 当玩家手持床右击村民时，会显示搜索范围的粒子效果，直观展示设置的距离
 
-#### 优化村民上下矿车行为
+#### 优化村民上下矿车行为（VilliagerCanOnlyRideMinecart）
 - 改善村民与矿车的交互机制，使村民更容易进入和离开矿车
 - 优化村民在矿车内的寻路逻辑
 - 默认禁用，可通过设置开关启用
 
-#### 优化铁傀儡生成条件
+#### 优化铁傀儡生成条件（optimizedIronGolemSpawning）
 - 调整村民被恐吓后铁傀儡的生成逻辑
 - 优化生成概率和条件判断
 - 减少不必要的性能消耗
 - 默认禁用，可通过设置开关启用
 
-#### 强制绑定村民与床
+#### 强制绑定村民与床（allowForcedBedBinding）
 - 允许使用烈焰棒和床强制将村民绑定到指定的床位置
 - 手持烈焰棒右键村民，显示"你已选中村民"提示
 - 手持床右键村民，显示"你已选中白床"提示
 - 绑定成功时显示"绑定成功"提示
 - 默认禁用，可通过设置开关启用
+
+#### 村民脑叶切除（VilliagerBrainCut)
+ - 开启后会移除村民部分特性（如交易，袭击相关）
+ - 显著降低大量村民造成的卡顿
+ - 通过/ybs 子指令控制开关
+ - 默认禁用，可通过设置开关启用
+
+#### 禁用村民移动（disableVilliagerMovement）
+ - 开启后会移除村民的随机寻路以及其他的移动ai机制
+ - 不会禁用寻床睡觉的机制
+ - 进一步降低大量村民堆积带来的卡顿
+ - 通过/ybs 子指令控制开关
+ - 默认禁用，可通过设置开关启用
+
+### 猪灵相关
+
+
+#### 猪灵/僵尸猪灵特性阉割（mobPiglinNeutralizer）
+ - 开启后会阉割猪灵和僵尸猪灵的绝大多数特性
+ - 僵尸猪灵会保留海龟蛋寻路机制
+ - 通过/ybs 子指令控制开关
+ - 默认禁用，可通过设置开关启用
+
+#### 控制僵尸猪灵/猪灵的移动行为（mobPiglinNeutralizer）
+ - 开启后猪灵/僵尸猪灵的移动ai将被移除
+ - 通过/carpet 控制开关
+ - 默认禁用，可通过设置开关启用
 
 ## 版本兼容性
 - Minecraft 版本：1.21.x
@@ -46,27 +92,6 @@
 3. 安装Fabric API
 4. 将本模组的JAR文件放入游戏目录下的`mods`文件夹中
 5. 启动游戏即可加载模组
-
-## 使用方法
-
-### 配置设置
-所有设置都可以通过Carpet命令进行配置：
-
-```
-/carpet ybsMasterSwitch <true|false> - 总控开关，控制所有功能的启用和关闭（默认：false）
-/carpet villagerBedSearchDistance <distance> - 设置村民识别床的距离（默认：48，最大值：128）
-/carpet VilliagerCanOnlyRideMinecart <true|false> - 启用/禁用村民只能乘坐矿车的限制（默认：false）
-/carpet optimizedIronGolemSpawning <true|false> - 启用/禁用优化的铁傀儡生成条件（默认：false）
-/carpet allowForcedBedBinding <true|false> - 允许使用烈焰棒和床强制绑定村民到指定床（默认：false）
-/carpet villagerBasicFunctionOnly - 仅保留基本村民功能（上下矿车、优化铁傀儡生成、识别床距离、村民随机游走功能，以及烈焰棒绑定村民与床）（默认：true，且无法被关闭）
-```
-
-### 查看设置
-可以使用自定义命令查看所有设置：
-
-```
-ybs settings
-```
 
 ## 注意事项
 - 更改设置后可能需要等待游戏刻更新生效
