@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "carpet-ybs-extension",
+  "version": "1.0.0",
+
+  "name": "Carpet YBS Extension",
+  "description": "A Carpet mod extension focusing on villager features",
+  "authors": [
+    "YBS"
+  ],
+  "contact": {
+    "homepage": "",
+    "issues": ""
+  },
+
+  "license": "MIT",
+  "icon": "assets/carpet-ybs-extension/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "carpet_ybs_extension.YBSAdditionExtension"
+    ]
+  },
+  "mixins": [
+    "carpet-ybs-extension.mixins.json"
+  ],
+
+  "depends": {
+    "minecraft": "1.21.x",
+    "fabricloader": ">=0.16.10",
+    "carpet": "1.4.147+v240613",
+    "fabric-api": "*",
+    "java": ">=21"
+  },
+  "suggests": {
+  }
+}

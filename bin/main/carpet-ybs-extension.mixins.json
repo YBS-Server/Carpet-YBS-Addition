@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "carpet_ybs_extension.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "Villager_aiMixin",
+    "PiglinMixin",
+    "ZombifiedPiglinMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 0,
+    "maxShiftBy": 100
+  }
+}
