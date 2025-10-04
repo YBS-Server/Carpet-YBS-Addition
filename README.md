@@ -1,5 +1,5 @@
 # Carpet YBS Extension
-这是一个基于Carpet模组的扩展，包含了诸多主要供月饼服使用的有用或者无用的功能。
+这是一个基于Carpet模组的扩展，包含了诸多主要供月饼服使用的有用或者无用的功能。<br><br>
 [![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange
 )](https://github.com/YBS-Server/Carpet-YBS-Addition)
 
